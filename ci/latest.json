@@ -1,7 +1,7 @@
 {
   "what_this_is": "Records what this run observed, not what the tests claim. Read scripts/receipt.mjs before trusting it.",
-  "generated_at_utc": "2026-08-20T04:46:32.930Z",
-  "commit": "7c03c04aaa8c201d56e387604dedb1445a3c22e5",
+  "generated_at_utc": "2026-08-20T20:33:34.332Z",
+  "commit": "6b20c45bfc458353466807bb2493663f09a6e161",
   "node": "v22.23.2",
   "invariant": "HOIST emits no schedule when any cost in the plan is undeclared. One plan in the corpus exists to exercise exactly that.",
   "plans": [
