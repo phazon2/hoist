@@ -1,0 +1,56 @@
+# Receipt CI — template.
+#
+# The pattern that scored in reps 01 and 02: an automated test that certifies
+# the project's central claim, whose machine-written JSON is committed next to
+# the script that produced it. It converts a claim a judge must believe into an
+# artifact a judge can open.
+#
+# Two rules this file exists to enforce:
+#   1. The receipt records what the run OBSERVED, not what the tests CLAIM.
+#      Those are different sentences and conflating them was rep 01's B4.
+#   2. No number quoted in prose that a machine regenerates. Prose cites the
+#      receipt; the receipt holds the number. That was rep 02's C2.
+#
+# Copy to .github/workflows/ci.yml and set PROJECT.
+
+name: receipt
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  receipt:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install
+        run: npm ci || npm install
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Test
+        run: npm test
+
+      - name: Write the receipt
+        run: node scripts/receipt.mjs
+
+      - name: Commit the receipt
+        run: |
+          git config user.name  "github-actions[bot]"
+          # A made-up <word>@users.noreply.github.com belongs to somebody.
+          # This is the real bot address. Rep 01, E13.
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ci/latest.json
+          git diff --staged --quiet || git commit -m "ci: receipt for ${GITHUB_SHA::7}"
+          git push
