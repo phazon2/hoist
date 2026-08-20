@@ -49,7 +49,9 @@ const plans = m.CORPUS.map((p) => {
     refusal_reason: s.refusalReason,
     total_exposure_hours: Number(s.totalExposure.toFixed(6)),
     tally: s.tally,
-    dependency_edges_hold: edgesHold,
+    // Null rather than true when there is no schedule to check. Reporting a
+    // vacuous pass on a refused plan would be a green light for work not done.
+    dependency_edges_hold: s.steps ? edgesHold : null,
     exposures: s.exposures.map((e) => ({
       fact: e.factId,
       finding: e.finding,

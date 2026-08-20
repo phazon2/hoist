@@ -1,0 +1,26 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, OutlineColour, BackColour, Bold, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Cap,Segoe UI,44,&H00F7EFE9,&H00120A08,&H96000000,1,3,0,0,2,200,200,150,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.50,0:00:05.60,Cap,,0,0,0,,Every safety tool gates the irreversible step.\NThis one reorders the plan around it.
+Dialogue: 0,0:00:08.00,0:00:15.50,Cap,,0,0,0,,A confirmation dialog is a lookup nobody performed, handed over\Nat the one instant it cannot be afforded.
+Dialogue: 0,0:00:22.50,0:00:30.00,Cap,,0,0,0,,Four plans that actually happened, encoded from their own written post-mortems.
+Dialogue: 0,0:00:33.00,0:00:43.00,Cap,,0,0,0,,This one is an eight-day hackathon.\NSix point four days of irreversibility, bought for nothing.
+Dialogue: 0,0:00:51.50,0:01:02.00,Cap,,0,0,0,,The category was chosen on day zero - six days to reverse. The file that\Nwould have changed it was sitting in the operator's own notes.
+Dialogue: 0,0:01:03.00,0:01:10.00,Cap,,0,0,0,,Reading it cost ninety seconds. It was opened on day six.
+Dialogue: 0,0:01:12.50,0:01:24.00,Cap,,0,0,0,,So HOIST lifts the lookup above the commitment,\Nwith every hard dependency still intact.
+Dialogue: 0,0:01:25.00,0:01:31.00,Cap,,0,0,0,,It moves the minimum it can defend moving.
+Dialogue: 0,0:01:33.50,0:01:43.00,Cap,,0,0,0,,And where it cannot lift, it says so.\NThe claims audit cannot precede writing the claims.
+Dialogue: 0,0:01:46.50,0:01:58.00,Cap,,0,0,0,,Now a plan where one cost was never stated.\NHOIST emits no schedule at all.
+Dialogue: 0,0:01:59.00,0:02:08.00,Cap,,0,0,0,,A schedule you cannot check is worse than no schedule,\Nbecause it looks like one.
+Dialogue: 0,0:02:10.00,0:02:19.00,Cap,,0,0,0,,Zero network requests since load. No model, no backend,\Nnothing you have to take on faith.
+Dialogue: 0,0:02:23.00,0:02:32.00,Cap,,0,0,0,,Look before you commit. Computed, not advised.

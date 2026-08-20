@@ -1,8 +1,8 @@
 {
   "what_this_is": "Records what this run observed, not what the tests claim. Read scripts/receipt.mjs before trusting it.",
-  "generated_at_utc": "2026-08-20T03:27:22.869Z",
-  "commit": "1a5de474bdb81337842f2a35b1ecf429c7667fef",
-  "node": "v22.23.2",
+  "generated_at_utc": "2026-08-20T04:46:03.593Z",
+  "commit": "cd048b3df2eaa02be621deac2bde4c503f8f0e22",
+  "node": "v25.2.1",
   "invariant": "HOIST emits no schedule when any cost in the plan is undeclared. One plan in the corpus exists to exercise exactly that.",
   "plans": [
     {
@@ -198,8 +198,8 @@
     },
     {
       "id": "undeclared",
-      "title": "A plan with a cost nobody stated",
-      "source": "The ordinary case. Most plans look like this.",
+      "title": "A plan with a cost nobody stated (constructed)",
+      "source": "Constructed, not logged — the only plan here that is. Its shape is the ordinary one.",
       "steps": 4,
       "facts": 2,
       "refused": true,
@@ -213,7 +213,7 @@
         "unknowable": 0,
         "undeclared": 1
       },
-      "dependency_edges_hold": true,
+      "dependency_edges_hold": null,
       "exposures": [
         {
           "fact": "vendor-lockin",

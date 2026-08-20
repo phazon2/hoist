@@ -19,24 +19,29 @@ decisions they came after, and lifts them above.
 > reverse, the lookup is mandatory and is not a delay.
 
 That is not a heuristic. It is a comparison between two numbers, both of which
-the operator declares. HOIST never estimates either one — and where a number is
-missing, it **refuses to produce a schedule at all**.
+the operator declares. HOIST never estimates either one — and where either
+figure in a comparison it needs is missing, it **refuses to produce a schedule
+at all**.
 
 ---
 
-## The corpus is four real failures
+## The corpus is three real failures, plus the refusal case
 
-These are not illustrative examples. They are four consecutive projects,
-encoded from their own written post-mortems by the person who ran them. The
-pattern was not designed; it was found by logging four failures and noticing
-they were the same failure.
+The first three are not illustrative examples. They are real projects run across
+two overlapping weeks of August 2026, encoded from their own written
+post-mortems by the person who ran them. The pattern was not designed; it was
+found by logging those three failures and noticing they were the same failure.
+
+The fourth is **constructed**. It claims no provenance and exists only to
+exercise the refusal — a plan with one cost nobody stated, which is the ordinary
+shape of a plan and the thing the refusal path is for.
 
 | Plan | What was committed | What was cheaper |
 |---|---|---|
 | **Contract-review hackathon** | The category, on day 0 — **6 days** to reverse | Opening a file already in the operator's own notes — **90 seconds**, measured |
 | **Agentic memory engine** | GitHub Actions as the whole verification substrate — 706 lines written against it | One `git push` against the real remote |
 | **Exam-prep product, live** | Marketing driving traffic through the funnel | One self-purchase, end to end |
-| **A plan with a cost nobody stated** | An annual vendor contract | — **HOIST refuses to schedule this one** |
+| **A plan with a cost nobody stated** *(constructed)* | An annual vendor contract | — **HOIST refuses to schedule this one** |
 
 The first row is the headline: **six days of irreversibility, bought for a
 ninety-second question.** Both figures are quoted from the log, not estimated
@@ -46,8 +51,11 @@ afterwards, and the provenance panel in the app says so per number.
 
 ## When it refuses
 
-If any cost in a plan is undeclared, HOIST emits **no schedule**. Not a partial
-one, not a best guess, not one with a warning banner.
+If a cost the rule actually reaches is undeclared — the lookup cost of a fact
+some step commits to, or the reversal cost of the step that first commits to it
+— HOIST emits **no schedule**. Not a partial one, not a best guess, not one with
+a warning banner. A blank cost that no comparison touches (a fact nothing
+commits to) is not load-bearing and does not trigger it.
 
 > **HOIST declines to schedule this plan.**
 > *1 fact has an undeclared cost. HOIST will not emit a reordered plan from a
@@ -64,8 +72,9 @@ think.
 
 ## The six findings
 
-`inverted` (acted, then looked) · `absent` (never looked) · `ordered` (looked
-first) · `not_worth_it` (the lookup genuinely costs more than being wrong) ·
+`inverted` (acted, then looked) · `absent` (never looked) · `ordered` (nothing
+to fix — the lookup came first, or no step commits to the fact) ·
+`not_worth_it` (the lookup costs at least as much as being wrong) ·
 `unknowable` (the fact does not exist until after the commitment — structural,
 not a mistake) · `undeclared` (a cost was not stated).
 
@@ -91,10 +100,12 @@ the one screen where overstating what was done would be self-refuting.
 ## The receipt
 
 [`ci/latest.json`](ci/latest.json) is machine-written by
-[`scripts/receipt.mjs`](scripts/receipt.mjs). Before writing, it independently
-re-derives every headline total from the exposure list and **verifies that every
-hard dependency edge still holds in every emitted schedule** — and aborts rather
-than emitting a receipt if either check fails.
+[`scripts/receipt.mjs`](scripts/receipt.mjs). Before writing, it **verifies that
+every hard dependency edge still holds in every emitted schedule** — a check on
+the output that nothing in `src/` performs on itself — and aborts rather than
+emitting a receipt if any edge is broken. It also re-sums the headline total off
+the exposure list, but with the same reduction the library used, so treat that
+half as a transcription check rather than an independent derivation.
 
 ```bash
 npm install

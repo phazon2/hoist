@@ -13,7 +13,9 @@ failure this tool is about is not "we could not estimate the cost." It is
 
 ## Undeclared means refused
 
-If any cost in a plan is missing, HOIST emits **no schedule at all**. Not a
+If a cost the rule actually reaches is missing — the lookup cost of a fact some
+step commits to, or the reversal cost of the step that first commits to it —
+HOIST emits **no schedule at all**. Not a
 partial one, not a best guess, not a schedule with a warning banner.
 
 A schedule you cannot check is worse than no schedule, because it looks like
@@ -26,7 +28,7 @@ the four bundled plans exists purely to exercise it.
 |---|---|
 | `inverted` | The lookup happened after the commitment. This is the bug. |
 | `absent` | The lookup never happened at all, and it was cheaper than being wrong. |
-| `ordered` | The lookup already preceded the commitment. Nothing to do. |
+| `ordered` | Nothing to do: either the lookup already preceded the commitment, or no step in this plan commits to the fact at all. |
 | `not_worth_it` | The lookup costs at least as much as being wrong. Skipping it is defensible, and saying so is the point. |
 | `unknowable` | The fact does not exist until after the commitment. The plan is structurally forced to commit while uninformed — not a mistake, but worth knowing. |
 | `undeclared` | A cost was not stated. HOIST declines to judge. |
@@ -58,8 +60,10 @@ after it.
 
 ## The corpus is real, and that is also a limit
 
-The four bundled plans are encoded from written post-mortems of four real
-projects by the person who ran them. That makes them honest and it makes them
+Three of the four bundled plans are encoded from written post-mortems of real
+projects by the person who ran them, across two overlapping weeks. The fourth
+claims no provenance at all — it is constructed, and exists purely to exercise
+the refusal described above. That makes the real three honest and it makes them
 **one person's practice**. Nothing here is validated across teams, industries,
 or plan sizes. The provenance panel names, per number, whether the figure was
 measured at the time or estimated afterwards, and you should read it before

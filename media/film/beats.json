@@ -1,0 +1,41 @@
+{
+  "beats": [
+    {
+      "t": 2.48,
+      "label": "hero"
+    },
+    {
+      "t": 15.66,
+      "label": "plans"
+    },
+    {
+      "t": 25.61,
+      "label": "cost"
+    },
+    {
+      "t": 44.57,
+      "label": "exposures"
+    },
+    {
+      "t": 65.69,
+      "label": "lift"
+    },
+    {
+      "t": 86.68,
+      "label": "blocked"
+    },
+    {
+      "t": 99.81,
+      "label": "refusal"
+    },
+    {
+      "t": 123.32,
+      "label": "probe"
+    },
+    {
+      "t": 135.28,
+      "label": "end"
+    }
+  ],
+  "url": "https://phazon2.github.io/hoist/"
+}

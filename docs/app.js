@@ -376,8 +376,8 @@ var RUTA = {
 };
 var UNDECLARED = {
   id: "undeclared",
-  title: "A plan with a cost nobody stated",
-  source: "The ordinary case. Most plans look like this.",
+  title: "A plan with a cost nobody stated (constructed)",
+  source: "Constructed, not logged \u2014 the only plan here that is. Its shape is the ordinary one.",
   facts: [
     {
       id: "vendor-lockin",

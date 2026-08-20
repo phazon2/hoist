@@ -1,10 +1,15 @@
 /**
  * The corpus.
  *
- * These are not illustrative examples. They are four real projects, encoded
- * from their own written post-mortems, by the person who ran them. That is why
- * the tool exists at all: the pattern was found by logging four consecutive
- * failures and noticing they were the same failure.
+ * Three of these are not illustrative examples. CONTRAPARTE, RESCIND and RUTA
+ * are real projects, encoded from their own written post-mortems by the person
+ * who ran them, across two overlapping weeks of August 2026. That is why the
+ * tool exists at all: the pattern was found by logging those three failures and
+ * noticing they were the same failure.
+ *
+ * UNDECLARED is the fourth, and it is CONSTRUCTED. It claims no provenance. It
+ * is here because the refusal path needs a plan to refuse, and because a plan
+ * with one cost nobody stated is the ordinary shape of a plan.
  *
  * Provenance is tracked per number. Where the log states a figure, `basis`
  * says "measured" and quotes it. Where the figure is the operator's own
@@ -181,15 +186,15 @@ export const RUTA: Plan = {
 };
 
 /**
- * The refusal case. A plan where one cost was never stated.
+ * The refusal case. Constructed, not logged — the only plan here that is.
  *
- * This is not a contrived example either — it is the shape of every plan
- * anybody actually writes. "We'll figure out how bad it is if it happens."
+ * Its shape is the ordinary one, though: "we'll figure out how bad it is if it
+ * happens" is how most plans treat their most expensive commitment.
  */
 export const UNDECLARED: Plan = {
   id: 'undeclared',
-  title: 'A plan with a cost nobody stated',
-  source: 'The ordinary case. Most plans look like this.',
+  title: 'A plan with a cost nobody stated (constructed)',
+  source: 'Constructed, not logged — the only plan here that is. Its shape is the ordinary one.',
   facts: [
     {
       id: 'vendor-lockin',
