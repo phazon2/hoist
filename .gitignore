@@ -1,2 +1,4 @@
 node_modules/
 .receipt-bundle.mjs
+media/
+undefined/
