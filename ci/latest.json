@@ -1,0 +1,242 @@
+{
+  "what_this_is": "Records what this run observed, not what the tests claim. Read scripts/receipt.mjs before trusting it.",
+  "generated_at_utc": "2026-08-20T03:26:25.341Z",
+  "commit": "5e62fe4d3c53869625ce720689d081653ba0345f",
+  "node": "v25.2.1",
+  "invariant": "HOIST emits no schedule when any cost in the plan is undeclared. One plan in the corpus exists to exercise exactly that.",
+  "plans": [
+    {
+      "id": "contraparte",
+      "title": "Contract-review tool, 8-day hackathon",
+      "source": "Rep log 01 — Contraparte / AI Factory, 3–10 Aug 2026. Solo.",
+      "steps": 8,
+      "facts": 3,
+      "refused": false,
+      "refusal_reason": null,
+      "total_exposure_hours": 154.725,
+      "tally": {
+        "ordered": 0,
+        "inverted": 2,
+        "absent": 1,
+        "not_worth_it": 0,
+        "unknowable": 0,
+        "undeclared": 0
+      },
+      "dependency_edges_hold": true,
+      "exposures": [
+        {
+          "fact": "crowding",
+          "finding": "inverted",
+          "lookup_cost_hours": 0.025,
+          "reversal_cost_hours": 144,
+          "exposure_hours": 143.975,
+          "committed_at_step": 2,
+          "looked_up_at_step": 6,
+          "blocked_by": []
+        },
+        {
+          "fact": "claims-true",
+          "finding": "inverted",
+          "lookup_cost_hours": 3,
+          "reversal_cost_hours": 8,
+          "exposure_hours": 5,
+          "committed_at_step": 4,
+          "looked_up_at_step": 7,
+          "blocked_by": [
+            "write-claims"
+          ]
+        },
+        {
+          "fact": "demo-is-deployed",
+          "finding": "absent",
+          "lookup_cost_hours": 0.25,
+          "reversal_cost_hours": 6,
+          "exposure_hours": 5.75,
+          "committed_at_step": 5,
+          "looked_up_at_step": null,
+          "blocked_by": []
+        }
+      ],
+      "lifted_steps": [
+        {
+          "id": "read-field-data",
+          "from": 6,
+          "to": 1
+        }
+      ]
+    },
+    {
+      "id": "rescind",
+      "title": "Agentic memory engine, 5-day hackathon",
+      "source": "Rep log 02 — Rescind / CockroachDB × AWS, 14–18 Aug 2026. Solo.",
+      "steps": 8,
+      "facts": 3,
+      "refused": false,
+      "refusal_reason": null,
+      "total_exposure_hours": 13.43,
+      "tally": {
+        "ordered": 1,
+        "inverted": 2,
+        "absent": 0,
+        "not_worth_it": 0,
+        "unknowable": 0,
+        "undeclared": 0
+      },
+      "dependency_edges_hold": true,
+      "exposures": [
+        {
+          "fact": "can-push",
+          "finding": "inverted",
+          "lookup_cost_hours": 0.05,
+          "reversal_cost_hours": 12,
+          "exposure_hours": 11.95,
+          "committed_at_step": 2,
+          "looked_up_at_step": 5,
+          "blocked_by": []
+        },
+        {
+          "fact": "cascade-ceiling",
+          "finding": "ordered",
+          "lookup_cost_hours": 1.5,
+          "reversal_cost_hours": 2,
+          "exposure_hours": null,
+          "committed_at_step": 8,
+          "looked_up_at_step": 7,
+          "blocked_by": []
+        },
+        {
+          "fact": "operator-has-laptop",
+          "finding": "inverted",
+          "lookup_cost_hours": 0.02,
+          "reversal_cost_hours": 1.5,
+          "exposure_hours": 1.48,
+          "committed_at_step": 3,
+          "looked_up_at_step": 6,
+          "blocked_by": []
+        }
+      ],
+      "lifted_steps": [
+        {
+          "id": "ask-laptop",
+          "from": 6,
+          "to": 1
+        },
+        {
+          "id": "try-push",
+          "from": 5,
+          "to": 2
+        }
+      ]
+    },
+    {
+      "id": "ruta",
+      "title": "Exam-prep product, live with paying customers",
+      "source": "Rep log 03 — Ruta PAES / Build with Gemini XPRIZE, 9–17 Aug 2026.",
+      "steps": 6,
+      "facts": 3,
+      "refused": false,
+      "refusal_reason": null,
+      "total_exposure_hours": 47.44,
+      "tally": {
+        "ordered": 0,
+        "inverted": 3,
+        "absent": 0,
+        "not_worth_it": 0,
+        "unknowable": 0,
+        "undeclared": 0
+      },
+      "dependency_edges_hold": true,
+      "exposures": [
+        {
+          "fact": "tier",
+          "finding": "inverted",
+          "lookup_cost_hours": 0.01,
+          "reversal_cost_hours": 8,
+          "exposure_hours": 7.99,
+          "committed_at_step": 2,
+          "looked_up_at_step": 5,
+          "blocked_by": []
+        },
+        {
+          "fact": "funnel-works",
+          "finding": "inverted",
+          "lookup_cost_hours": 0.5,
+          "reversal_cost_hours": 10,
+          "exposure_hours": 9.5,
+          "committed_at_step": 3,
+          "looked_up_at_step": 6,
+          "blocked_by": []
+        },
+        {
+          "fact": "one-prize-rule",
+          "finding": "inverted",
+          "lookup_cost_hours": 0.05,
+          "reversal_cost_hours": 30,
+          "exposure_hours": 29.95,
+          "committed_at_step": 1,
+          "looked_up_at_step": 4,
+          "blocked_by": []
+        }
+      ],
+      "lifted_steps": [
+        {
+          "id": "buy-own",
+          "from": 6,
+          "to": 1
+        },
+        {
+          "id": "read-label",
+          "from": 5,
+          "to": 2
+        },
+        {
+          "id": "read-rules",
+          "from": 4,
+          "to": 3
+        }
+      ]
+    },
+    {
+      "id": "undeclared",
+      "title": "A plan with a cost nobody stated",
+      "source": "The ordinary case. Most plans look like this.",
+      "steps": 4,
+      "facts": 2,
+      "refused": true,
+      "refusal_reason": "1 fact has an undeclared cost. HOIST will not emit a reordered plan from a guess. A schedule you cannot check is worse than no schedule, because it looks like one.",
+      "total_exposure_hours": 20,
+      "tally": {
+        "ordered": 0,
+        "inverted": 1,
+        "absent": 0,
+        "not_worth_it": 0,
+        "unknowable": 0,
+        "undeclared": 1
+      },
+      "dependency_edges_hold": true,
+      "exposures": [
+        {
+          "fact": "vendor-lockin",
+          "finding": "undeclared",
+          "lookup_cost_hours": null,
+          "reversal_cost_hours": 200,
+          "exposure_hours": null,
+          "committed_at_step": 1,
+          "looked_up_at_step": null,
+          "blocked_by": []
+        },
+        {
+          "fact": "load",
+          "finding": "inverted",
+          "lookup_cost_hours": 4,
+          "reversal_cost_hours": 24,
+          "exposure_hours": 20,
+          "committed_at_step": 3,
+          "looked_up_at_step": 4,
+          "blocked_by": []
+        }
+      ],
+      "lifted_steps": null
+    }
+  ]
+}
